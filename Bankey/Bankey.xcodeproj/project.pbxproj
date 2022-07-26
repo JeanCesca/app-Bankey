@@ -13,7 +13,7 @@
 		0F7E4A9B289021D000A9B072 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0F7E4A99289021D000A9B072 /* LaunchScreen.storyboard */; };
 		0F7E4AA52890242800A9B072 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AA42890242800A9B072 /* LoginView.swift */; };
 		0F7E4AA828905E9800A9B072 /* OnboardingContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AA728905E9800A9B072 /* OnboardingContainerViewController.swift */; };
-		0F7E4AAA2890685900A9B072 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AA92890685900A9B072 /* OnboardingView.swift */; };
+		0F7E4AAA2890685900A9B072 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AA92890685900A9B072 /* OnboardingViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,7 +25,7 @@
 		0F7E4A9C289021D000A9B072 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0F7E4AA42890242800A9B072 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		0F7E4AA728905E9800A9B072 /* OnboardingContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingContainerViewController.swift; sourceTree = "<group>"; };
-		0F7E4AA92890685900A9B072 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		0F7E4AA92890685900A9B072 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				0F7E4AA728905E9800A9B072 /* OnboardingContainerViewController.swift */,
-				0F7E4AA92890685900A9B072 /* OnboardingView.swift */,
+				0F7E4AA92890685900A9B072 /* OnboardingViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -167,7 +167,7 @@
 				0F7E4AA52890242800A9B072 /* LoginView.swift in Sources */,
 				0F7E4A93289021D000A9B072 /* LoginViewController.swift in Sources */,
 				0F7E4A8F289021D000A9B072 /* AppDelegate.swift in Sources */,
-				0F7E4AAA2890685900A9B072 /* OnboardingView.swift in Sources */,
+				0F7E4AAA2890685900A9B072 /* OnboardingViewController.swift in Sources */,
 				0F7E4AA828905E9800A9B072 /* OnboardingContainerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
