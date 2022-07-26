@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class LoginView: UIView {
-    
+
     let stackView = UIStackView()
     let usernameTexfField = UITextField()
     let passwordTextField = UITextField()
@@ -70,9 +70,7 @@ extension LoginView {
         NSLayoutConstraint.activate([
             dividerView.heightAnchor.constraint(equalToConstant: 1)
         ])
-
     }
-    
 }
 
 //MARK: - UITextField Delegates
