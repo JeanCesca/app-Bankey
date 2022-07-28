@@ -16,6 +16,8 @@
 		0F7E4AAA2890685900A9B072 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AA92890685900A9B072 /* OnboardingViewController.swift */; };
 		0F7E4AAC289185EB00A9B072 /* DummyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AAB289185EB00A9B072 /* DummyViewController.swift */; };
 		0F7E4AAF2892CCA200A9B072 /* LocalState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AAE2892CCA200A9B072 /* LocalState.swift */; };
+		0F7E4AB12892F96400A9B072 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AB02892F96400A9B072 /* MainViewController.swift */; };
+		0F7E4AB42893023900A9B072 /* AccountSummaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4AB32893023900A9B072 /* AccountSummaryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +32,8 @@
 		0F7E4AA92890685900A9B072 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		0F7E4AAB289185EB00A9B072 /* DummyViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyViewController.swift; sourceTree = "<group>"; };
 		0F7E4AAE2892CCA200A9B072 /* LocalState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalState.swift; sourceTree = "<group>"; };
+		0F7E4AB02892F96400A9B072 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		0F7E4AB32893023900A9B072 /* AccountSummaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,11 +66,12 @@
 		0F7E4A8D289021D000A9B072 /* Bankey */ = {
 			isa = PBXGroup;
 			children = (
-				0F7E4AAD2892CC9400A9B072 /* Utils */,
-				0F7E4AA22890239400A9B072 /* Files */,
-				0F7E4AA628905E6600A9B072 /* Onboarding */,
-				0F7E4AA3289023E300A9B072 /* Login */,
 				0F7E4A8E289021D000A9B072 /* AppDelegate.swift */,
+				0F7E4AB02892F96400A9B072 /* MainViewController.swift */,
+				0F7E4AA3289023E300A9B072 /* Login */,
+				0F7E4AA628905E6600A9B072 /* Onboarding */,
+				0F7E4AB22893021100A9B072 /* AccountSummary */,
+				0F7E4AAD2892CC9400A9B072 /* Utils */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -79,6 +84,7 @@
 				0F7E4A9C289021D000A9B072 /* Info.plist */,
 			);
 			name = Files;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		0F7E4AA3289023E300A9B072 /* Login */ = {
@@ -103,9 +109,18 @@
 		0F7E4AAD2892CC9400A9B072 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				0F7E4AA22890239400A9B072 /* Files */,
 				0F7E4AAE2892CCA200A9B072 /* LocalState.swift */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		0F7E4AB22893021100A9B072 /* AccountSummary */ = {
+			isa = PBXGroup;
+			children = (
+				0F7E4AB32893023900A9B072 /* AccountSummaryViewController.swift */,
+			);
+			path = AccountSummary;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -185,6 +200,8 @@
 				0F7E4A8F289021D000A9B072 /* AppDelegate.swift in Sources */,
 				0F7E4AAA2890685900A9B072 /* OnboardingViewController.swift in Sources */,
 				0F7E4AA828905E9800A9B072 /* OnboardingContainerViewController.swift in Sources */,
+				0F7E4AB12892F96400A9B072 /* MainViewController.swift in Sources */,
+				0F7E4AB42893023900A9B072 /* AccountSummaryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
