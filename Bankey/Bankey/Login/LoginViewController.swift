@@ -7,11 +7,20 @@
 
 import UIKit
 
+protocol LogoutDelegate: AnyObject {
+    func didLogout()
+}
+
+protocol LoginViewControllerDelegate: AnyObject {
+    func didLogIn()
+}
+
 class LoginViewController: UIViewController {
+    
+    weak var delegate: LoginViewControllerDelegate?
     
     let titleLabel = UILabel()
     let subtitleLabel = UILabel()
-    
     let loginView = LoginView()
     let signInButton = UIButton(type: .system)
     let errorMessageLabel = UILabel()
@@ -29,6 +38,11 @@ class LoginViewController: UIViewController {
         
         style()
         configureConstraints()
+    }
+    
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        signInButton.configuration?.showsActivityIndicator = false
     }
 }
 
@@ -126,6 +140,7 @@ extension LoginViewController {
         
         if username == "jeancesca" && password == "123456" {
             signInButton.configuration?.showsActivityIndicator = true
+            delegate?.didLogIn()
         } else {
             errorMessageLabel.isHidden = false
             errorMessageLabel.text = "Verifique seu Username e Password"
