@@ -32,7 +32,7 @@ class AccountSummaryHeaderView: UIView {
         bundle.loadNibNamed("AccountSummaryHeaderView", owner: self, options: nil)
         
         addSubview(contentView)
-        contentView.backgroundColor = .systemPink
+        contentView.backgroundColor = UIColor(named: "color")
         contentView.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
