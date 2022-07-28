@@ -76,6 +76,7 @@
 				0F7E4AA628905E6600A9B072 /* Onboarding */,
 				0F7E4AB22893021100A9B072 /* AccountSummary */,
 				0F7E4AAD2892CC9400A9B072 /* Utils */,
+				0F7E4AA22890239400A9B072 /* Files */,
 			);
 			path = Bankey;
 			sourceTree = "<group>";
@@ -88,7 +89,6 @@
 				0F7E4A9C289021D000A9B072 /* Info.plist */,
 			);
 			name = Files;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		0F7E4AA3289023E300A9B072 /* Login */ = {
@@ -113,7 +113,6 @@
 		0F7E4AAD2892CC9400A9B072 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				0F7E4AA22890239400A9B072 /* Files */,
 				0F7E4AAE2892CCA200A9B072 /* LocalState.swift */,
 			);
 			path = Utils;
