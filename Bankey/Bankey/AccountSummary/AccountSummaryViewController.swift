@@ -9,20 +9,15 @@ import UIKit
 
 class AccountSummaryViewController: UIViewController {
     
+    var accounts: [AccountSummaryCell.ViewModel] = []
     var tableView = UITableView()
-    
-    let games = [
-            "Pacman",
-            "Space Invaders",
-            "Space Patrol",
-        ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         setupTableView()
         setupTableHeaderView()
-       
+        fetchData()
     }
     
     private func setupTableHeaderView() {
@@ -32,7 +27,6 @@ class AccountSummaryViewController: UIViewController {
             header.frame.size = size
         tableView.tableHeaderView = header
     }
-
 }
 
 extension AccountSummaryViewController {
@@ -60,11 +54,14 @@ extension AccountSummaryViewController {
 
 extension AccountSummaryViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return games.count
+        return accounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountSummaryCell.reuseID, for: indexPath) as? AccountSummaryCell else { return UITableViewCell() }
+        
+        let account = accounts[indexPath.row]
+        cell.configure(with: account)
         
         return cell
     }
@@ -73,6 +70,18 @@ extension AccountSummaryViewController: UITableViewDataSource {
 extension AccountSummaryViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+    }
+}
+
+extension AccountSummaryViewController {
+    private func fetchData() {
+        let savings = AccountSummaryCell.ViewModel(accountType: .Banking, accountName: "Basic Savings")
+        let visa = AccountSummaryCell.ViewModel(accountType: .CreditCard, accountName: "Visa Avion Card")
+        let investment = AccountSummaryCell.ViewModel(accountType: .Investment, accountName: "Tax-Free Saver")
+
+        accounts.append(savings)
+        accounts.append(visa)
+        accounts.append(investment)
     }
 }
 
