@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0F2E724E28931E2C00590510 /* AccountSummaryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E724D28931E2C00590510 /* AccountSummaryCell.swift */; };
+		0F2E7250289411C000590510 /* DecimalUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E724F289411C000590510 /* DecimalUtil.swift */; };
+		0F2E72522894125600590510 /* CurrencyFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F2E72512894125600590510 /* CurrencyFormatter.swift */; };
 		0F7E4A8F289021D000A9B072 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4A8E289021D000A9B072 /* AppDelegate.swift */; };
 		0F7E4A93289021D000A9B072 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7E4A92289021D000A9B072 /* LoginViewController.swift */; };
 		0F7E4A98289021D000A9B072 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0F7E4A97289021D000A9B072 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 
 /* Begin PBXFileReference section */
 		0F2E724D28931E2C00590510 /* AccountSummaryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSummaryCell.swift; sourceTree = "<group>"; };
+		0F2E724F289411C000590510 /* DecimalUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecimalUtil.swift; sourceTree = "<group>"; };
+		0F2E72512894125600590510 /* CurrencyFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrencyFormatter.swift; sourceTree = "<group>"; };
 		0F7E4A8B289021D000A9B072 /* Bankey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bankey.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F7E4A8E289021D000A9B072 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F7E4A92289021D000A9B072 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -133,6 +137,8 @@
 			isa = PBXGroup;
 			children = (
 				0F7E4AAE2892CCA200A9B072 /* LocalState.swift */,
+				0F2E724F289411C000590510 /* DecimalUtil.swift */,
+				0F2E72512894125600590510 /* CurrencyFormatter.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -219,10 +225,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F7E4AB6289307B900A9B072 /* AccountSummaryHeaderView.swift in Sources */,
+				0F2E7250289411C000590510 /* DecimalUtil.swift in Sources */,
 				0F2E724E28931E2C00590510 /* AccountSummaryCell.swift in Sources */,
 				0F7E4AA52890242800A9B072 /* LoginView.swift in Sources */,
 				0F7E4AAF2892CCA200A9B072 /* LocalState.swift in Sources */,
 				0F7E4AAC289185EB00A9B072 /* DummyViewController.swift in Sources */,
+				0F2E72522894125600590510 /* CurrencyFormatter.swift in Sources */,
 				0F7E4A93289021D000A9B072 /* LoginViewController.swift in Sources */,
 				0F7E4A8F289021D000A9B072 /* AppDelegate.swift in Sources */,
 				0F7E4AAA2890685900A9B072 /* OnboardingViewController.swift in Sources */,
