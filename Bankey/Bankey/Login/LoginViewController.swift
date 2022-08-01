@@ -122,6 +122,17 @@ extension LoginViewController {
             
         ])
     }
+    
+    private func shakeButton() {
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = "position-x"
+        animation.values = [0, 10, -10, 10, 0]
+        animation.keyTimes = [0, 0.16, 0.5, 0.83, 1]
+        animation.duration = 0.4
+        
+        animation.isAdditive = true
+        signInButton.layer.add(animation, forKey: "shake")
+    }
 }
 
 extension LoginViewController {
@@ -132,18 +143,20 @@ extension LoginViewController {
         guard let username = username else { return }
         guard let password = password else { return }
         
-        if username.isEmpty || password.isEmpty {
-            errorMessageLabel.isHidden = false
-            errorMessageLabel.text = "Preencha os campos acima com seu Username e Password"
-            return
-        }
+//        if username.isEmpty || password.isEmpty {
+//            errorMessageLabel.isHidden = false
+//            errorMessageLabel.text = "Preencha os campos acima com seu Username e Password"
+//            return
+//        }
         
-        if username == "jeancesca" && password == "123456" {
+        if username == "jean" && password == "123456" {
             signInButton.configuration?.showsActivityIndicator = true
             delegate?.didLogIn()
         } else {
+            shakeButton()
             errorMessageLabel.isHidden = false
             errorMessageLabel.text = "Verifique seu Username e Password"
+
         }
     }
 }
