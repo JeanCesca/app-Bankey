@@ -30,6 +30,8 @@ class MainViewController: UITabBarController {
         moneyVC.tabBarItem.title = "Move Money"
         moreVC.tabBarItem.title = "More"
         
+        summaryVC.navigationBar.barTintColor = UIColor(named: "color")
+        
         setViewControllers([summaryVC, moneyVC, moreVC], animated: true)
     }
     

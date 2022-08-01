@@ -69,6 +69,7 @@ extension AccountSummaryCell {
         nameLabel.translatesAutoresizingMaskIntoConstraints = false
         nameLabel.font = .preferredFont(forTextStyle: .body)
         nameLabel.text = "Account name"
+        nameLabel.lineBreakMode = .byWordWrapping
         
         balanceStackView.translatesAutoresizingMaskIntoConstraints = false
         balanceStackView.axis = .vertical

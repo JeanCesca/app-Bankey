@@ -32,6 +32,8 @@ class AccountSummaryViewController: UIViewController {
 extension AccountSummaryViewController {
     
     private func setupTableView() {
+        tableView.backgroundColor = UIColor(named: "color")
+        
         tableView.delegate = self
         tableView.dataSource = self
         

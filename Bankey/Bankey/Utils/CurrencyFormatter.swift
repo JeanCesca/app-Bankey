@@ -29,6 +29,10 @@ struct CurrencyFormatter {
     private func convertDollar(_ dollarPart: Double) -> String {
         let dollarsWithDecimal = dollarsFormatted(dollarPart) // "$929,466.00"
         let formatter = NumberFormatter()
+        formatter.currencyCode = "USD"
+        formatter.currencySymbol = "$"
+        formatter.numberStyle = .currency
+        formatter.locale = Locale(identifier: "en_US")
         let decimalSeparator = formatter.decimalSeparator! // "."
         let dollarComponents = dollarsWithDecimal.components(separatedBy: decimalSeparator) // "$929,466" "00"
         var dollars = dollarComponents.first! // "$929,466"
@@ -51,8 +55,11 @@ struct CurrencyFormatter {
     // Converts 929466 > $929,466.00
     func dollarsFormatted(_ dollars: Double) -> String {
         let formatter = NumberFormatter()
-        formatter.numberStyle = .currency
+        formatter.currencyCode = "USD"
         formatter.usesGroupingSeparator = true
+        formatter.numberStyle = .currency
+        formatter.currencySymbol = "$"
+        formatter.locale = Locale(identifier: "en_US")
         
         if let result = formatter.string(from: dollars as NSNumber) {
             return result
