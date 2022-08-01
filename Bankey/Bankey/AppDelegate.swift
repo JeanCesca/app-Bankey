@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -26,33 +24,42 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         loginViewController.delegate = self
         onboardingContainerViewController.delegate = self
+
+        displayLogin()
         
-        let vc = mainViewController
-        vc.setStatusBar()
-        
+        return true
+    }
+    
+    private func displayLogin() {
+        setRootViewController(loginViewController)
+    }
+    
+    private func displayNextScreen() {
+        if LocalState.hasOnboarded {
+            prepMainView()
+            setRootViewController(mainViewController)
+        } else {
+            setRootViewController(onboardingContainerViewController)
+        }
+    }
+    
+    private func prepMainView() {
+        mainViewController.setStatusBar()
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().backgroundColor = UIColor(named: "color")
-        
-        window?.rootViewController = vc
-
-        return true
     }
 }
 
 extension AppDelegate: LoginViewControllerDelegate {
     func didLogIn() {
-//        window?.rootViewController = onboardingContainerViewController
-        if LocalState.hasOnboarded {
-            setRootViewController(mainViewController)
-        } else {
-            setRootViewController(onboardingContainerViewController)
-        }
+        displayNextScreen()
     }
 }
 
 extension AppDelegate: OnboardingContainerViewControllerDelegate {
     func didFinishOnBoarding() {
         LocalState.hasOnboarded = true
+        prepMainView()
         setRootViewController(mainViewController)
     }
 }
