@@ -17,6 +17,12 @@ struct Profile: Codable {
     let id: String
     let firstName: String
     let lastName: String
+    
+    enum CodingKeys: String, CodingKey {
+        case id
+        case firstName = "first_name"
+        case lastName = "last_name"
+    }
 }
 
 extension AccountSummaryViewController {
@@ -29,7 +35,7 @@ extension AccountSummaryViewController {
                     completion(.failure(.serverError))
                     return
                 }
-                
+
                 do {
                     let profile = try JSONDecoder().decode(Profile.self, from: data)
                     completion(.success(profile))
@@ -47,6 +53,10 @@ struct Account: Codable {
     let name: String
     let amount: Decimal
     let createdDateTime: Date
+    
+    static func makeSkeleton() -> Account {
+        return Account(id: "1", type: .Banking, name: "Account name", amount: 0.0, createdDateTime: Date())
+    }
 }
 
 extension AccountSummaryViewController {
@@ -73,4 +83,3 @@ extension AccountSummaryViewController {
         }.resume()
     }
 }
-
