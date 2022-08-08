@@ -58,7 +58,6 @@ extension PasswordCriteriaView {
         translatesAutoresizingMaskIntoConstraints = false
         
         stackView.translatesAutoresizingMaskIntoConstraints = false
-        stackView.axis = .horizontal
         stackView.spacing = 8
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -74,6 +73,7 @@ extension PasswordCriteriaView {
     func layout() {
         stackView.addArrangedSubview(imageView)
         stackView.addArrangedSubview(label)
+        
         addSubview(stackView)
         
         NSLayoutConstraint.activate([

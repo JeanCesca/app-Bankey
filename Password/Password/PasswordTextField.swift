@@ -5,21 +5,19 @@
 //  Created by Jean Ricardo Cesca on 05/08/22.
 //
 
-import Foundation
 import UIKit
 
-class PasswordTextField: UIView, UITextFieldDelegate {
+class PasswordTextField: UIView {
     
-    private let lockImageView = UIImageView()
-    private let textField = UITextField()
-    private let placeHolderText: String
-    private let eyeButton = UIButton(type: .custom)
-    private let dividerView = UIView()
-    private let errorLabel = UILabel()
-    
+    let lockImageView = UIImageView(image: UIImage(systemName: "lock.fill"))
+    let textField = UITextField()
+    let placeHolderText: String
+    let eyeButton = UIButton(type: .custom)
+    let dividerView = UIView()
+    let errorLabel = UILabel()
     
     init(placeHolderText: String) {
-        self.placeHolderText = placeHolderText //as propriedades precisam ser setadas antes do SUPER.INIT SEMPRE
+        self.placeHolderText = placeHolderText
         
         super.init(frame: .zero)
         
@@ -31,23 +29,25 @@ class PasswordTextField: UIView, UITextFieldDelegate {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var intrinsicContentSize: CGSize {
+        return CGSize(width: 200, height: 60)
+    }
 }
 
 extension PasswordTextField {
     
     func style() {
         translatesAutoresizingMaskIntoConstraints = false
-        backgroundColor = .systemOrange
         
-        lockImageView.image = UIImage(systemName: "lock.fill")
         lockImageView.translatesAutoresizingMaskIntoConstraints = false
         
         textField.translatesAutoresizingMaskIntoConstraints = false
-        textField.isSecureTextEntry = false
+        textField.isSecureTextEntry = false // true
         textField.placeholder = placeHolderText
-        textField.delegate = self
-        textField.keyboardType = .asciiCapable //prevenir uso de Emojis
-        textField.attributedPlaceholder = NSAttributedString(string: placeHolderText, attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel]) //mudar a cor do Placeholder
+//        textField.delegate = self
+        textField.keyboardType = .asciiCapable
+        textField.attributedPlaceholder = NSAttributedString(string:placeHolderText,
+                                                             attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
         
         eyeButton.translatesAutoresizingMaskIntoConstraints = false
         eyeButton.setImage(UIImage(systemName: "eye.circle"), for: .normal)
@@ -60,10 +60,11 @@ extension PasswordTextField {
         errorLabel.translatesAutoresizingMaskIntoConstraints = false
         errorLabel.textColor = .systemRed
         errorLabel.font = .preferredFont(forTextStyle: .footnote)
-        errorLabel.text = "Your password must meet the requirements below."
+        errorLabel.text = "Your password must meet the requirements below"
         errorLabel.numberOfLines = 0
         errorLabel.lineBreakMode = .byWordWrapping
-        errorLabel.isHidden = false
+
+        errorLabel.isHidden = false // true
     }
     
     func layout() {
@@ -74,44 +75,44 @@ extension PasswordTextField {
         addSubview(errorLabel)
         
         NSLayoutConstraint.activate([
-            lockImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            lockImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor)
+            lockImageView.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
+            lockImageView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
         
         NSLayoutConstraint.activate([
+            textField.topAnchor.constraint(equalTo: topAnchor),
             textField.leadingAnchor.constraint(equalToSystemSpacingAfter: lockImageView.trailingAnchor, multiplier: 1),
-            textField.topAnchor.constraint(equalTo: topAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            eyeButton.topAnchor.constraint(equalTo: topAnchor),
-            trailingAnchor.constraint(equalTo: eyeButton.trailingAnchor),
-            eyeButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor)
+            eyeButton.centerYAnchor.constraint(equalTo: textField.centerYAnchor),
+            eyeButton.leadingAnchor.constraint(equalToSystemSpacingAfter: textField.trailingAnchor, multiplier: 1),
+            eyeButton.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
         
         NSLayoutConstraint.activate([
-            dividerView.leadingAnchor.constraint(equalTo: lockImageView.leadingAnchor),
-            dividerView.topAnchor.constraint(equalToSystemSpacingBelow: textField.bottomAnchor, multiplier: 0.75),
-            dividerView.trailingAnchor.constraint(equalTo: eyeButton.trailingAnchor),
-            dividerView.heightAnchor.constraint(equalToConstant: 1)
+            dividerView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            dividerView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            dividerView.heightAnchor.constraint(equalToConstant: 1),
+            dividerView.topAnchor.constraint(equalToSystemSpacingBelow: textField.bottomAnchor, multiplier: 1)
         ])
         
         NSLayoutConstraint.activate([
+            errorLabel.topAnchor.constraint(equalTo: dividerView.bottomAnchor, constant: 4),
             errorLabel.leadingAnchor.constraint(equalTo: leadingAnchor),
-            errorLabel.topAnchor.constraint(equalToSystemSpacingBelow: dividerView.bottomAnchor, multiplier: 1),
             errorLabel.trailingAnchor.constraint(equalTo: trailingAnchor),
         ])
+        
+        lockImageView.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
+        textField.setContentHuggingPriority(UILayoutPriority.defaultLow, for: .horizontal)
+        eyeButton.setContentHuggingPriority(UILayoutPriority.defaultHigh, for: .horizontal)
     }
 }
 
+// MARK:  Actions
 extension PasswordTextField {
     @objc func togglePasswordView(_ sender: Any) {
         textField.isSecureTextEntry.toggle()
         eyeButton.isSelected.toggle()
     }
-}
-
-extension PasswordTextField: UITextViewDelegate {
-    
-    
 }
