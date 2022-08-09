@@ -32,6 +32,7 @@ extension ViewController {
         stackView.spacing = 40
         
         passwordTextField.translatesAutoresizingMaskIntoConstraints = false
+        passwordTextField.delegate = self
         
         passwordStatusView.translatesAutoresizingMaskIntoConstraints = false
         passwordStatusView.layer.cornerRadius = 8
@@ -57,6 +58,15 @@ extension ViewController {
             stackView.leadingAnchor.constraint(equalToSystemSpacingAfter: view.leadingAnchor, multiplier: 2),
             view.trailingAnchor.constraint(equalToSystemSpacingAfter: stackView.trailingAnchor, multiplier: 2)
         ])
+    }
+}
+
+extension ViewController: PasswordTextFieldDelegate {
+    
+    func editingChanged(_ sender: PasswordTextField) {
+        if sender == passwordTextField {
+            passwordStatusView.updateDisplay(sender.textField.text ?? "")
+        }
     }
 }
 

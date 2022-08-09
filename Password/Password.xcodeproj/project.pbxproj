@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0F7A8BF228A2916A00AF13F5 /* PasswordCriteria.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F7A8BF128A2916A00AF13F5 /* PasswordCriteria.swift */; };
 		0F8D9327289D480900533A45 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D9326289D480900533A45 /* AppDelegate.swift */; };
 		0F8D9329289D480900533A45 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D9328289D480900533A45 /* SceneDelegate.swift */; };
 		0F8D932B289D480900533A45 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8D932A289D480900533A45 /* ViewController.swift */; };
@@ -18,6 +19,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0F7A8BF128A2916A00AF13F5 /* PasswordCriteria.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordCriteria.swift; sourceTree = "<group>"; };
 		0F8D9323289D480900533A45 /* Password.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Password.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0F8D9326289D480900533A45 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0F8D9328289D480900533A45 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F7A8BF328A292CA00AF13F5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0F7A8BF128A2916A00AF13F5 /* PasswordCriteria.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		0F8D931A289D480900533A45 = {
 			isa = PBXGroup;
 			children = (
@@ -60,9 +70,10 @@
 		0F8D9325289D480900533A45 /* Password */ = {
 			isa = PBXGroup;
 			children = (
-				0F8D9326289D480900533A45 /* AppDelegate.swift */,
 				0F8D933B289D486200533A45 /* Files */,
-				0F8D934528A16DF300533A45 /* View Controller */,
+				0F8D9326289D480900533A45 /* AppDelegate.swift */,
+				0F7A8BF328A292CA00AF13F5 /* Model */,
+				0F8D934528A16DF300533A45 /* Controller */,
 				0F8D934428A16C1500533A45 /* View */,
 			);
 			path = Password;
@@ -88,13 +99,13 @@
 			name = View;
 			sourceTree = "<group>";
 		};
-		0F8D934528A16DF300533A45 /* View Controller */ = {
+		0F8D934528A16DF300533A45 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				0F8D932A289D480900533A45 /* ViewController.swift */,
 				0F8D933C289D4BAF00533A45 /* PasswordTextField.swift */,
 			);
-			name = "View Controller";
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,6 +183,7 @@
 				0F8D934328A16C0400533A45 /* PasswordCriteriaView.swift in Sources */,
 				0F8D934728A19F7300533A45 /* PasswordStatusView.swift in Sources */,
 				0F8D933D289D4BAF00533A45 /* PasswordTextField.swift in Sources */,
+				0F7A8BF228A2916A00AF13F5 /* PasswordCriteria.swift in Sources */,
 				0F8D9329289D480900533A45 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
