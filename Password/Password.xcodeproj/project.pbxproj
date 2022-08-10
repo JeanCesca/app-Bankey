@@ -93,6 +93,7 @@
 		0F8D934428A16C1500533A45 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				0F8D933C289D4BAF00533A45 /* PasswordTextField.swift */,
 				0F8D934628A19F7300533A45 /* PasswordStatusView.swift */,
 				0F8D934228A16C0400533A45 /* PasswordCriteriaView.swift */,
 			);
@@ -103,7 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				0F8D932A289D480900533A45 /* ViewController.swift */,
-				0F8D933C289D4BAF00533A45 /* PasswordTextField.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
